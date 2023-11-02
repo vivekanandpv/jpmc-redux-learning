@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { counterSlice } from './store/counter-slice';
+import Login from './Login';
 
 const App = (props) => {
   const counter = useSelector((state) => state.counter);
@@ -27,6 +28,9 @@ const App = (props) => {
         <button className='btn btn-primary me-3' onClick={decrement}>
           Decrement
         </button>
+
+        <hr />
+        <Login />
       </div>
     </>
   );
