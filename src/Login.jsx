@@ -4,6 +4,8 @@ import { userSlice } from './store/user-slice';
 
 const Login = (props) => {
   const user = useSelector((state) => state.user);
+  const currentTheme = useSelector((state) => state.theme);
+
   const dispatch = useDispatch();
 
   const login = () => {
@@ -21,7 +23,7 @@ const Login = (props) => {
 
   return (
     <>
-      <h4>Login Component</h4>
+      <h4>Login Component {currentTheme}</h4>
       {user.user && (
         <p>
           User: {user.user} Roles: {user.roles}

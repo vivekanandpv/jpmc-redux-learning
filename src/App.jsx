@@ -2,9 +2,12 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { counterSlice } from './store/counter-slice';
 import Login from './Login';
+import Sample from './Sample';
 
 const App = (props) => {
   const counter = useSelector((state) => state.counter);
+  const currentTheme = useSelector((state) => state.theme);
+
   const dispatch = useDispatch();
 
   const increment = () => {
@@ -20,7 +23,9 @@ const App = (props) => {
   return (
     <>
       <div className='p-5'>
-        <h3>Redux Learning: {counter}</h3>
+        <h3>
+          Redux Learning: {counter} :: {currentTheme}
+        </h3>
         <hr />
         <button className='btn btn-primary me-3' onClick={increment}>
           Increment
@@ -31,6 +36,9 @@ const App = (props) => {
 
         <hr />
         <Login />
+
+        <hr />
+        <Sample />
       </div>
     </>
   );
